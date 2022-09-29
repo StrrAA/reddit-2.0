@@ -23,7 +23,7 @@ import Link from "next/link";
 function Header() {
   const { data: session } = useSession();
   return (
-    <div className="sticky top-0 z-50 flex bg-white px-2 sm:px-4 py-2 shadow-sm items-center">
+    <div className="sticky top-0 z-50 flex bg-white px-1 sm:px-4 py-2 shadow-sm items-center justify-evenly">
       <div className="flex relative sm:h-10 sm:w-20 flex-shrink-0 h-6 w-14 cursor-pointer">
         <Link href="/">
           <Image
@@ -34,7 +34,7 @@ function Header() {
         </Link>
       </div>
 
-      <div className="flex items-center mx-2 sm:mx-7 xl:min-w-[300px]">
+      <div className="flex items-center mx-1 sm:mx-7 xl:min-w-[300px]">
         <Link href="/">
           <HomeIcon className="h-5 w-5 cursor-pointer" />
         </Link>
@@ -43,14 +43,14 @@ function Header() {
             Home
           </p>
         </Link>
-        <ChevronDownIcon className="h-5 w-5" />
+        <ChevronDownIcon className="hidden sm:inline-flex h-5 w-5" />
       </div>
 
       {/* Search box */}
-      <form className="flex flex-1 items-center space-x-1 sm:space-x-2 border border-gray-200 rounded-sm bg-gray-100 px-1 sm:px-3 py-1">
-        <MagnifyingGlassIcon className="h-6 w-6 text-gray-400" />
+      <form className="max-w-[48vw] sm:max-w-full flex sm:flex-1 items-center space-x-1 sm:space-x-2 border border-gray-200 rounded-sm bg-gray-100 px-1 sm:px-3 py-1">
+        <MagnifyingGlassIcon className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400" />
         <input
-          className="flex-1 bg-transparent outline-none"
+          className="sm:flex-1 bg-transparent outline-none"
           type="text"
           placeholder="Search Reddit"
         />
@@ -77,7 +77,7 @@ function Header() {
       {session ? (
         <div
           onClick={() => signOut()}
-          className="items-center sm:flex space-x-2 border border-gray-100 p-1 cursor-pointer hover:after:content-['Sign_Out'] hover:after:absolute after:top-12 after:right-4 after:text-gray-400 hover:after:border-2 after:rounded-sm hover:after:border-[#ff4401] after:bg-gray-50 hover:after:w-18 sm:hover:after:w-[130px] hover:after:text-center"
+          className="items-center sm:flex space-x-1 sm:space-x-2 border border-gray-100 p-0.5 sm:p-1 cursor-pointer hover:after:content-['Sign_Out'] hover:after:absolute after:top-12 after:right-4 after:text-gray-400 hover:after:border-2 after:rounded-sm hover:after:border-[#ff4401] after:bg-gray-50 hover:after:w-18 sm:hover:after:w-[130px] hover:after:text-center"
         >
           <div className="hidden sm:inline-flex relative h-5 w-5 flex-shrink-0 ">
             <Image
