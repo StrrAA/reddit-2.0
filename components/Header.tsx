@@ -77,9 +77,9 @@ function Header() {
       {session ? (
         <div
           onClick={() => signOut()}
-          className="hidden items-center lg:flex space-x-2 border border-gray-100 p-1 cursor-pointer hover:after:content-['Sign_Out'] hover:after:absolute after:top-12 after:right-4 after:text-gray-400 hover:after:border-2 after:rounded-sm hover:after:border-[#ff4401] after:bg-gray-50 hover:after:w-[130px] hover:after:text-center"
+          className="items-center sm:flex space-x-2 border border-gray-100 p-1 cursor-pointer hover:after:content-['Sign_Out'] hover:after:absolute after:top-12 after:right-4 after:text-gray-400 hover:after:border-2 after:rounded-sm hover:after:border-[#ff4401] after:bg-gray-50 hover:after:w-18 sm:hover:after:w-[130px] hover:after:text-center"
         >
-          <div className="relative h-5 w-5 flex-shrink-0 ">
+          <div className="hidden sm:inline-flex relative h-5 w-5 flex-shrink-0 ">
             <Image
               objectFit="contain"
               src="https://links.papareact.com/23l"
@@ -88,18 +88,19 @@ function Header() {
             />
           </div>
 
-          <div className="flex-1 text-xs ">
+          <div className="flex-1 text-xs">
             <p className="truncate">{session?.user?.name}</p>
-            <p className="text-gray-400">1 Karma</p>
+            <p className="hidden sm:flex text-gray-400">1 Karma</p>
+            <p className="flex justify-center sm:hidden text-gray-400">Sign Out</p>
           </div>
-          <ChevronDownIcon className="h-5 flex-shrink-0 text-gray-400" />
+          <ChevronDownIcon className="hidden sm:flex h-5 flex-shrink-0 text-gray-400" />
         </div>
       ) : (
         <div
           onClick={() => signIn()}
-          className="hidden items-center lg:flex space-x-2 border border-gray-100 p-2 cursor-pointer"
+          className=" text-xs lg:text-base items-center flex space-x-1  lg:space-x-2 border border-gray-100 p-2 cursor-pointer"
         >
-          <div className="relative h-5 w-5 flex-shrink-0">
+          <div className="hidden md:inline-flex relative h-5 w-5 flex-shrink-0">
             <Image
               objectFit="contain"
               src="https://links.papareact.com/23l"
